@@ -36,51 +36,47 @@
     </header>
      
     <main>
-        <section class="product">
-            <img src="product1.jpg" alt="Counter-Strike: Global Offensive">
-            <h2>Counter-Strike: Global Offensive</h2>
-            <p>Популярный шутер от первого лица.</p>
-            <span class="price">Цена: $50</span>
-            <button>Купить</button>
-        </section>
-        <section class="product">
-            <img src="product2.jpg" alt="Roblox">
-            <h2>Roblox</h2>
-            <p>Roblox.</p>
-            <span class="price">Цена: $40</span>
-            <button>Купить</button>
-        </section>
-        <section class="product">
-            <img src="product3.jpg" alt="Товар 3">
-            <h2>Товар 3</h2>
-            <p>Описание товара 3.</p>
-            <span class="price">Цена: $35</span>
-            <button>Купить</button>
-        </section>
-        <section class="product">
-            <img src="product4.jpg" alt="Товар 4">
-            <h2>Товар 4</h2>
-            <p>Описание товара 4.</p>
-            <span class="price">Цена: $55</span>
-            <button>Купить</button>
-        </section>
-        <section class="product">
-            <img src="product5.jpg" alt="Товар 5">
-            <h2>Товар 5</h2>
-            <p>Описание товара 5.</p>
-            <span class="price">Цена: $30</span>
-            <button>Купить</button>
-        </section>
-        <section class="product">
-            <img src="product1.jpg" alt="Товар 6">
-            <h2>Товар 6</h2>
-            <p>Описание товара 6.</p>
-            <span class="price">Цена: $48</span>
-            <button>Купить</button>
-        </section>
+        <script>
+            // Fetch the product data from the JSON file
+            fetch('products.json')
+                .then(response => response.json())
+                .then(products => {
+                    // Create and append product sections to the main element
+                    const main = document.querySelector('main');
+                    products.forEach(product => {
+                        const productSection = document.createElement('section');
+                        productSection.className = 'product';
+        
+                        const img = document.createElement('img');
+                        img.src = product.image;
+                        img.alt = product.name;
+        
+                        const h2 = document.createElement('h2');
+                        h2.textContent = product.name;
+        
+                        const p = document.createElement('p');
+                        p.textContent = product.description;
+        
+                        const span = document.createElement('span');
+                        span.className = 'price';
+                        span.textContent = `Цена: ${product.price === 0 ? 'Бесплатно' : `$${product.price}`}`;
+        
+                        const button = document.createElement('button');
+                        button.textContent = 'Купить';
+        
+                        productSection.appendChild(img);
+                        productSection.appendChild(h2);
+                        productSection.appendChild(p);
+                        productSection.appendChild(span);
+                        productSection.appendChild(button);
+        
+                        main.appendChild(productSection);
+                    });
+                });
+        </script>
     </main>
     
     <button id="scrollToTopBtn" title="Наверх">↑</button>
     <script src="script.js"></script>
 </body>
-</html>ис
+</html>

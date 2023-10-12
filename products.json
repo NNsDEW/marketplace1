@@ -1,0 +1,149 @@
+[
+    {
+        "id": 1,
+        "name": "Counter-Strike: Global Offensive",
+        "description": "Популярный шутер от первого лица.",
+        "price": 50,
+        "image": "product1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Roblox",
+        "description": "Roblox.",
+        "price": 40,
+        "image": "product2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Кмб4",
+        "description": "хз сюда обычно не ходят",
+        "price": 0,
+        "image": "product3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Roblox",
+        "description": "Roblox.",
+        "price": 40,
+        "image": "product2.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Minecraft",
+        "description": "Популярная песочница с блоками.",
+        "price": 30,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 6,
+        "name": "The Witcher 3: Wild Hunt",
+        "description": "Ролевая игра с открытым миром.",
+        "price": 60,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 7,
+        "name": "FIFA 22",
+        "description": "Симулятор футбола.",
+        "price": 45,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Grand Theft Auto V",
+        "description": "Открытый мир и приключения.",
+        "price": 55,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Among Us",
+        "description": "Многопользовательская игра о предателях.",
+        "price": 5,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Call of Duty: Warzone",
+        "description": "Битва королей в мире Call of Duty.",
+        "price": 0,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Fortnite",
+        "description": "Популярная битва роял.",
+        "price": 0,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Cyberpunk 2077",
+        "description": "Открытый мир будущего.",
+        "price": 50,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 13,
+        "name": "The Legend of Zelda: Breath of the Wild",
+        "description": "Приключения Линка в Хайруле.",
+        "price": 60,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Overwatch",
+        "description": "Командный шутер от Blizzard.",
+        "price": 40,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Red Dead Redemption 2",
+        "description": "Западный приключенческий мир.",
+        "price": 50,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Apex Legends",
+        "description": "Битва королей в мире Titanfall.",
+        "price": 0,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 17,
+        "name": "Mortal Kombat 11",
+        "description": "Брутальные поединки в Mortal Kombat.",
+        "price": 35,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 18,
+        "name": "The Elder Scrolls V: Skyrim",
+        "description": "Фэнтезийный мир с драконами.",
+        "price": 40,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 19,
+        "name": "Sekiro: Shadows Die Twice",
+        "description": "Ниндзя-экшен от FromSoftware.",
+        "price": 45,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 20,
+        "name": "Hollow Knight",
+        "description": "Приключения в мрачной пещере.",
+        "price": 15,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 21,
+        "name": "не",
+        "description": "ен.",
+        "price": 45,
+        "image": "product4.jpg"
+    }
+]
