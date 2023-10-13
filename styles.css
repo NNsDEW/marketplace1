@@ -29,6 +29,7 @@ main {
 }
 
 .product {
+    position: relative; /* Устанавливаем позицию как относительную */
     background-color: #4d3a75;
     border-radius: 10px;
     padding: 20px;
@@ -36,12 +37,14 @@ main {
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     width: 300px;
+    height: 500px;
 }
 
 .product img {
     max-width: 100%;
     border-radius: 5px;
 }
+
 
 h2 {
     font-size: 24px;
@@ -57,14 +60,15 @@ p {
     font-size: 18px;
 }
 
-button {
+button, .add-to-cart-button {
     background-color: #a87fe8;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 10px 30px;
+    border-radius: 50px;
     cursor: pointer;
     margin-top: 10px;
+    margin-left: 10px;
 }
 
 button:hover {
@@ -155,4 +159,17 @@ nav a:hover {
 #scrollToTopBtn:hover {
     background-color: #7b4cc0;
 }
-/* CSS для выпадающего списка результатов поиска */
+.add-to-cart-button {
+    position: absolute; /* Устанавливаем позицию как абсолютную */
+    bottom: 0; /* Размещаем внизу */
+    right: 0; /* Размещаем справа */
+    background: #a87fe8;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-to-cart-button img {
+    width: 24px; 
+    height: 24px;
+}

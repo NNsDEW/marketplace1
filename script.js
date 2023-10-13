@@ -12,12 +12,6 @@ window.addEventListener('scroll', () => {
 scrollToTopBtn.addEventListener('click', () => {
     document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
 });
-// Замените этот мокап данных на реальные данные из вашей базы данных или API
-const productsData = [
-    { id: 1, name: 'Товар 1' },
-    { id: 2, name: 'Товар 2' },
-    // Добавьте другие товары здесь
-];
 
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');

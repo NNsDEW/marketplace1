@@ -46,35 +46,45 @@
                     products.forEach(product => {
                         const productSection = document.createElement('section');
                         productSection.className = 'product';
-        
+    
                         const img = document.createElement('img');
                         img.src = product.image;
                         img.alt = product.name;
-        
+    
                         const h2 = document.createElement('h2');
                         h2.textContent = product.name;
-        
+    
                         const p = document.createElement('p');
                         p.textContent = product.description;
-        
+    
                         const span = document.createElement('span');
                         span.className = 'price';
-                        span.textContent = `Цена: ${product.price === 0 ? 'Бесплатно' : `$${product.price}`}`;
-        
+                        span.textContent = `Цена: ${product.price === 0 ? 'Free' : `$${product.price}`}`;
+    
                         const button = document.createElement('button');
                         button.textContent = 'Купить';
-        
+    
+                        const addToCartButton = document.createElement('button');
+                        addToCartButton.className = 'add-to-cart-button';
+                        const addToCartImage = document.createElement('img');
+                        addToCartImage.src = 'add-to-cart.png'; // Путь к изображению кнопки
+                        addToCartImage.alt = 'Поместить в корзину';
+                        addToCartButton.appendChild(addToCartImage);
+    
                         productSection.appendChild(img);
                         productSection.appendChild(h2);
                         productSection.appendChild(p);
                         productSection.appendChild(span);
+                        productSection.appendChild(addToCartButton);
                         productSection.appendChild(button);
-        
+                        
+    
                         main.appendChild(productSection);
                     });
                 });
         </script>
     </main>
+    
     
     <button id="scrollToTopBtn" title="Наверх">↑</button>
     <script src="script.js"></script>
