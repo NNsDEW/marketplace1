@@ -2,16 +2,16 @@
     {
         "id": 1,
         "name": "Counter-Strike: Global Offensive",
-        "description": "Популярный шутер от первого лица.",
+        "description": "легенда которую никогда не забудут.",
         "price": 50,
         "image": "product1.jpg"
     },
     {
         "id": 2,
-        "name": "Roblox",
-        "description": "Roblox.",
+        "name": "Horizon Zero Dawn",
+        "description": "Приключения в мире роботов и племен.",
         "price": 40,
-        "image": "product2.jpg"
+        "image": "product4.jpg"
     },
     {
         "id": 3,
@@ -141,9 +141,59 @@
     },
     {
         "id": 21,
-        "name": "не",
-        "description": "ен.",
+        "name": "The Last of Us Part II",
+        "description": "Постапокалиптическое приключение.",
         "price": 45,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 22,
+        "name": "Doom Eternal",
+        "description": "Брутальный шутер от первого лица.",
+        "price": 40,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 23,
+        "name": "Resident Evil Village",
+        "description": "Жуткий хоррор от Capcom.",
+        "price": 50,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 24,
+        "name": "Assassin's Creed Valhalla",
+        "description": "Путешествие во времена викингов.",
+        "price": 55,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 25,
+        "name": "Death Stranding",
+        "description": "Загадочное приключение от Hideo Kojima.",
+        "price": 40,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 26,
+        "name": "Monster Hunter: World",
+        "description": "Охота на монстров в живописных мирах.",
+        "price": 45,
+        "image": "product4.jpg"
+    },
+    
+    {
+        "id": 27,
+        "name": "Fallout 4",
+        "description": "Постапокалиптическая RPG в мире Фоллаут.",
+        "price": 30,
+        "image": "product4.jpg"
+    },
+    {
+        "id": 28,
+        "name": "The Sims 4",
+        "description": "Симулятор жизни.",
+        "price": 25,
         "image": "product4.jpg"
     }
 ]

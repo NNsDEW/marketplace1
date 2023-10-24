@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Маркетплейс</title>
 </head>
-
 <body>
     <header>
         <a href="main.html" class="logo-link">
             <h1>Мамамаркетплейссс!</h1>
+            <li class="cart_text">
+                <sapn>Профиль</sapn>
+            </li>
         </a>
         
-        <section class="search-bar">
-                    <input type="text" id="searchInput" placeholder="Поиск">
-                    <div id="searchResults"></div>
-            </section>
-            
         <nav>
             <ul>
                 <li class="favorites-icon">
@@ -37,15 +33,25 @@
         </nav>
     </header>
     
-    <main>
+    <main1>
+        <!-- Разметка для вида профиля -->
+        <section class="profile-view">
+            <img src="user_avatar.jpg" alt="User Image" class="img_user">
+            <div class="text-info">
+                <h2>Ваш профиль</h2>
+                <p>Имя: Волосатая Киса</p>
+                <p>Email: Voloskisa@rembler.com</p>
+                <!-- Дополнительные данные и настройки профиля могут быть добавлены здесь -->
+            </div>
+        </section>
         
-    </main>
+    </main1>
     
     
     <button id="scrollToTopBtn" title="Наверх">↑</button>
-    <script src="script.js"></script>
 </body>
 <footer>
-        <p>Все права принадлежат: Наминову Наилю</p>
-    </footer>
+    <p>Все права принадлежат: Наминову Наилю</p>
+</footer>
 </html>
+

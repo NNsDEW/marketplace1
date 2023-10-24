@@ -1,5 +1,9 @@
-
 const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+const main = document.querySelector('main');
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+
+let productsData = [];
 
 window.addEventListener('scroll', () => {
     if (document.documentElement.scrollTop > 100) {
@@ -13,33 +17,59 @@ scrollToTopBtn.addEventListener('click', () => {
     document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-const searchInput = document.getElementById('searchInput');
-const searchResults = document.getElementById('searchResults');
+fetch('products.json')
+    .then(response => response.json())
+    .then(data => {
+        productsData = data;
+        displayProducts(productsData);
+    })
+    .catch(error => {
+        console.error('Ошибка при загрузке данных о продуктах:', error);
+    });
 
 searchInput.addEventListener('input', function() {
     const searchTerm = this.value.toLowerCase();
     const matchingProducts = productsData.filter(product => product.name.toLowerCase().includes(searchTerm));
-
-    // Очищаем результаты поиска
-    searchResults.innerHTML = '';
-
-    if (matchingProducts.length > 0) {
-        matchingProducts.forEach(product => {
-            const resultItem = document.createElement('a');
-            resultItem.href = '#' + product.id; // Замените на реальную ссылку товара
-            resultItem.textContent = product.name;
-            searchResults.appendChild(resultItem);
-        });
-
-        searchResults.style.display = 'block';
-    } else {
-        searchResults.style.display = 'none';
-    }
+    main.innerHTML = '';
+    displayProducts(matchingProducts);
 });
 
-// Закрываем результаты поиска при клике вне них
-document.addEventListener('click', function(event) {
-    if (event.target !== searchInput && event.target !== searchResults) {
-        searchResults.style.display = 'none';
-    }
-});
+function displayProducts(products) {
+    products.forEach(product => {
+        const productSection = document.createElement('section');
+        productSection.className = 'product';
+
+        const img = document.createElement('img');
+        img.src = product.image;
+        img.alt = product.name;
+
+        const h2 = document.createElement('h2');
+        h2.textContent = product.name;
+
+        const p = document.createElement('p');
+        p.textContent = product.description;
+
+        const span = document.createElement('span');
+        span.className = 'price';
+        span.textContent = `Цена: ${product.price === 0 ? 'Free' : `$${product.price}`}`;
+
+        const button = document.createElement('button');
+        button.textContent = 'Купить';
+
+        const addToCartButton = document.createElement('button');
+        addToCartButton.className = 'add-to-cart-button';
+        const addToCartImage = document.createElement('img');
+        addToCartImage.src = 'add-to-cart.png';
+        addToCartImage.alt = 'Поместить в корзину';
+        addToCartButton.appendChild(addToCartImage);
+
+        productSection.appendChild(img);
+        productSection.appendChild(h2);
+        productSection.appendChild(p);
+        productSection.appendChild(span);
+        productSection.appendChild(addToCartButton);
+        productSection.appendChild(button);
+
+        main.appendChild(productSection);
+    });
+}
