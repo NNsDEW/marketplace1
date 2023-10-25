@@ -195,5 +195,12 @@
         "description": "Симулятор жизни.",
         "price": 25,
         "image": "product4.jpg"
+    },
+    {
+        "id": 29,
+        "name": "rick owens",
+        "description": "тапки этого долбаёба.",
+        "price": 0,
+        "image": "product5.jpg"
     }
 ]
