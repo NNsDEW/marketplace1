@@ -4,13 +4,10 @@ const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
 
 let productsData = [];
+let displayedProducts = [];
 
 window.addEventListener('scroll', () => {
-    if (document.documentElement.scrollTop > 100) {
-        scrollToTopBtn.style.display = 'block';
-    } else {
-        scrollToTopBtn.style.display = 'none';
-    }
+    scrollToTopBtn.style.display = document.documentElement.scrollTop > 100 ? 'block' : 'none';
 });
 
 scrollToTopBtn.addEventListener('click', () => {
@@ -21,54 +18,41 @@ fetch('products.json')
     .then(response => response.json())
     .then(data => {
         productsData = data;
-        displayProducts(productsData);
+        displayedProducts = data;
+        displayProducts(displayedProducts);
     })
     .catch(error => {
         console.error('Ошибка при загрузке данных о продуктах:', error);
     });
 
-searchInput.addEventListener('input', function() {
-    const searchTerm = this.value.toLowerCase();
-    const matchingProducts = productsData.filter(product => product.name.toLowerCase().includes(searchTerm));
-    main.innerHTML = '';
-    displayProducts(matchingProducts);
+searchInput.addEventListener('input', () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    displayedProducts = productsData.filter(product => product.name.toLowerCase().includes(searchTerm));
+    displayProducts(displayedProducts);
 });
 
 function displayProducts(products) {
+    main.innerHTML = ''; 
+
+    if (products.length === 0) {
+        main.innerHTML = 'No matching products found.';
+        return;
+    }
+
     products.forEach(product => {
         const productSection = document.createElement('section');
         productSection.className = 'product';
 
-        const img = document.createElement('img');
-        img.src = product.image;
-        img.alt = product.name;
-
-        const h2 = document.createElement('h2');
-        h2.textContent = product.name;
-
-        const p = document.createElement('p');
-        p.textContent = product.description;
-
-        const span = document.createElement('span');
-        span.className = 'price';
-        span.textContent = `Цена: ${product.price === 0 ? 'Free' : `$${product.price}`}`;
-
-        const button = document.createElement('button');
-        button.textContent = 'Купить';
-
-        const addToCartButton = document.createElement('button');
-        addToCartButton.className = 'add-to-cart-button';
-        const addToCartImage = document.createElement('img');
-        addToCartImage.src = 'add-to-cart.png';
-        addToCartImage.alt = 'Поместить в корзину';
-        addToCartButton.appendChild(addToCartImage);
-
-        productSection.appendChild(img);
-        productSection.appendChild(h2);
-        productSection.appendChild(p);
-        productSection.appendChild(span);
-        productSection.appendChild(addToCartButton);
-        productSection.appendChild(button);
+        productSection.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h2>${product.name}</h2>
+            <p>${product.description}</p>
+            <span class="price">Цена: ${product.price === 0 ? 'Free' : `$${product.price}`}</span>
+            <button class="add-to-cart-button">
+                <img src="add-to-cart.png" alt="Поместить в корзину">
+            </button>
+            <button>Купить</button>
+        `;
 
         main.appendChild(productSection);
     });
